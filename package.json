@@ -1,0 +1,21 @@
+{
+  "name": "flowJS",
+  "version": "0.0.0",
+  "description": "flowJS is new framework for stacks JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Igor Vieira",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.10.1",
+    "mkdirp": "^0.5.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.5.2"
+  }
+}

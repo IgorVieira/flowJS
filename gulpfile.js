@@ -1,18 +1,24 @@
-var gulp = require('gulp');
-var sourcemaps = require('gulp-sourcemaps');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
+'use strict'
 
+let gulp = require('gulp');
+let sourcemaps = require('gulp-sourcemaps');
+let babel = require('gulp-babel');
+let concat = require('gulp-concat');
 
-
-
-gulp.task('default', function(){
-        return gulp.src('src/**/*.js')
+gulp.task('babel', ()=>{
+  return gulp.src('src/**/*.js')
           .pipe(sourcemaps.init())
           .pipe(babel())
-//          .pipe(concat('flowJS'))
+          //.pipe(concat())
           .pipe(sourcemaps.write('.'))
           .pipe(gulp.dest('dist'));
+	
+});
 
+
+gulp.task('watch', ()=>{
+ gulp.watch(['src/**/*.js'],['babel']);
 })
+
+gulp.task('default',['watch']);
 

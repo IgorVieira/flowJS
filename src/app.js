@@ -1,6 +1,8 @@
 import mkdirp from 'mkdirp';
 import readline from 'readline';
 import Construction from './construction';
+import fs from 'fs';
+
 
 
 let rl = readline.createInterface({
@@ -9,13 +11,28 @@ let rl = readline.createInterface({
 });
 
 
-rl.question("name project:", (app => {
+rl.question('\x1b[36mName project\x1b[0m : ', (app => {
 
 let doProject = new Construction();
 
-	doProject.createProject(app);
-	doProject.createModules(app);
 
+   fs.exists(app, function (err) {
+   		if (!err){
+   			doProject.createProject(app);
+			doProject.createModules(app);	
+   		}else{
+   			console.log('Folder exists')
+   		}
+   			
+   });
+
+
+    
+		   
+	
+	   
+
+	
 
 
 

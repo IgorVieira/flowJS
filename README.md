@@ -1,2 +1,2 @@
 # flowJS
-:octocat: Create aplications MEAN soo much fast
+:octocat: Create aplications soo much fast

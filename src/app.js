@@ -16,25 +16,15 @@ rl.question('\x1b[36mName project\x1b[0m : ', (app => {
 let doProject = new Construction();
 
 
-   fs.exists(app, function (err) {
+   fs.exists(app, (err => {
    		if (!err){
    			doProject.createProject(app);
-			doProject.createModules(app);	
+			  doProject.createModules(app);
    		}else{
    			console.log('Folder exists')
    		}
-   			
-   });
 
-
-    
-		   
-	
-	   
-
-	
-
-
+   }));
 
 
 

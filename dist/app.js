@@ -38,4 +38,3 @@ rl.question('\x1b[36mName project\x1b[0m : ', function (app) {
 
   rl.close();
 });
-//# sourceMappingURL=app.js.map

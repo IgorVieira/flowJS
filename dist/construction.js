@@ -12,39 +12,34 @@ var _fs2 = _interopRequireDefault(_fs);
 
 var doProject = function doProject() {
 
-      /*create a folder project*/
+  /*create a folder project*/
 
-      this.createProject = function (app) {
-            return (0, _mkdirp2['default'])(app, function (err) {
-                  if (err) console.log(err);else console.log('   \x1b[36mFlow start app\x1b[0m : ' + app);
-            });
-            complete();
-      };
+  this.createProject = function (app) {
+    return (0, _mkdirp2['default'])(app, function (err) {
+      if (err) console.log(err);else console.log('   \x1b[36mFlow start app\x1b[0m : ' + app);
+    });
+    complete();
+  };
 
-      /*create a subfolders for a project*/
+  /*create a subfolders for a project*/
 
-      this.createModules = function (app) {
+  this.createModules = function (app) {
 
-            function create(app) {
+    function create(app) {
 
-                  (0, _mkdirp2['default'])(app + '/app', function () {
-                        console.log('   \x1b[35mcreate\x1b[0m : ' + '/app');
-                  });
-                  (0, _mkdirp2['default'])(app + '/config', function () {
-                        console.log('   \x1b[35mcreate\x1b[0m : ' + '/config');
-                  });
-                  (0, _mkdirp2['default'])(app + '/public', function () {
-                        console.log('   \x1b[35mcreate\x1b[0m : ' + '/public');
-                  });
-                  (0, _mkdirp2['default'])(app + '/test', function () {
-                        console.log('   \x1b[35mcreate\x1b[0m : ' + '/test');
-                  });
-            }
+      var folders = [{ name: 'app' }, { name: 'config' }, { name: 'public' }];
 
-            return create(app);
-            complete();
-      };
+      for (var i = 0; i < folders.length; i++) {
+        (0, _mkdirp2['default'])(app + '/' + folders[i].name, function (err) {
+          if (err) console.error(err);
+        });
+        console.log('   \x1b[35mcreate\x1b[0m : ' + folders[i].name);
+      }
+    }
+
+    return create(app);
+    complete();
+  };
 };
 
 module.exports = doProject;
-//# sourceMappingURL=construction.js.map
